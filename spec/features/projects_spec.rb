@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.feature "Projects", type: :feature do
   context "Create new project" do
     before(:each) do
@@ -50,7 +49,7 @@ RSpec.feature "Projects", type: :feature do
       visit project_path(project)
       click_button "Destroy this project"
       expect(page).to have_content("Project was successfully destroyed")
-      expect(Project.count).to eq(0)
+      expect(Project.count).to eq(2)
     end
   end
 end

@@ -82,10 +82,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov', require: false
 end
 
-#Adding simplecov
-gem 'simplecov', require: false, group: :test
 
 #Create integration spec and a home page
 group :development, :test do
