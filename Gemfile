@@ -72,6 +72,11 @@ group :development do
 
 end
 
+# Run against this stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0'
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
@@ -81,3 +86,8 @@ end
 
 #Adding simplecov
 gem 'simplecov', require: false, group: :test
+
+#Create integration spec and a home page
+group :development, :test do
+  gem 'capybara'
+end
