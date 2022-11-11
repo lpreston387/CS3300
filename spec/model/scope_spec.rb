@@ -7,6 +7,8 @@ RSpec.describe Project, type: :model do
     let(:params) { { title: "Title", description: "some description" } }
     before(:each) do
       Project.create(params)
+      Project.create(params)
+      Project.create(params)
     end
 
     it "should return all projects" do
