@@ -5,7 +5,21 @@
 # are not: uncommented lines are intended to protect your configuration from
 # breaking changes in upgrades (i.e., in the event that future versions of
 # Devise change the default values for those options).
-#
+
+class TurboFailureApp < Devise::FailureApp
+  def respond
+    if request_format == :turbo_stream
+      :redirect
+    else
+      super
+    end
+  end
+
+  def skip_format?
+    %w[html turbo_stream].include? request_format.to_s
+  end
+end
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -14,7 +28,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'd3b3f6c5a60233090581653db349f32f8ca1380fee1595a6c66756e56e8ad1c3149fb7b248c525c344a1d5adb6949e9edceee8ddd70fb8bb1663a74f409be16d'
+  # config.secret_key = '730f0fa4c9fd7bb3b31cd1b248c44b43ae615c098515a43bf12b775e56ab1c147bb60d8e0e75685c0529b398870f1bbc5478459292cc0f23937281f14d0c5c0d'
+
+  config.parent_controller = 'TurboDeviseController'
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.warden do |manager|
+    manager.failure_app = TurboFailureApp
+  end
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +146,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'e1a71671ac2460e731038d439fd6861a6dce918998ba8a1ffd8117bdcc49fcaf1e4c8506ee223401a669d6cdd5163645bb8fd44432ec652ce0be091173b12a99'
+  # config.pepper = '33598df140230d95fd70e00cb956799b702b63fda66c31998fe5c8ccc38754c33691d90f0b4a252568c2b4a0a19467bd4d1958618883a8432e4edb4278f2ff6a'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
