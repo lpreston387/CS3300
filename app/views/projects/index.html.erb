@@ -1,13 +1,19 @@
 
 
-<div class="container">
+
 <h1>Projects</h1>
-</div>
 
-<% @projects.each do |project| %>
-    <%= render project %>
 
-    <% end %>
+
+
+    <div class="card-group">
+    <% @projects.each do |project| %>
+        <%= render project %>
+    
+        <% end %>
+    </div>
+
+  </div>  
 
 
 
