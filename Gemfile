@@ -92,3 +92,7 @@ group :development, :test do
 end
 
 gem "devise"
+
+gem 'bootstrap', '~> 5.2.2'
+
+gem 'jquery-rails'
