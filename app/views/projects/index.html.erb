@@ -7,11 +7,11 @@
   <% @projects.each do |project| %>
     <%= render project %>
     <p>
-      <%= link_to "Show this project", project, :class => "btn btn-lg btn secondary" if user_signed_in?%> 
+      <%= link_to "Show this project", project, :class => "btn btn-outline-primary" if user_signed_in?%> 
     </p>
   <% end %>
 </div>
 
-<%= link_to "New project", new_project_path, :class => "btn btn-lg btn secondary" if user_signed_in?%> 
+<%= link_to "New project", new_project_path, :class => "btn btn-outline-primary" if user_signed_in?%> 
 
 </div>
