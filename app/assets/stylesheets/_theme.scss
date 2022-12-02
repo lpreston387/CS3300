@@ -1,0 +1,5 @@
+$theme-color: "cyan";
+
+body {
+    background-color: mcolor($theme-color, "lighten-4");
+}
