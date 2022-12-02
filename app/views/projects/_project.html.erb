@@ -1,12 +1,12 @@
 <div id="<%= dom_id project %>">
-  <p>
-    <strong>Title:</strong>
-    <%= project.title %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= project.description %>
-  </p>
+</div>
 
+
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success"> <%= project.title %> </div>
+  <div class="card-body text-white">
+    <p class="card-text"><%= project.description %></p>
+  </div>
+  <%= link_to "Show this project", project, :class => "btn btn-outline-dark" if user_signed_in?%>
 </div>
