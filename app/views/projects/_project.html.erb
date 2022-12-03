@@ -1,8 +1,8 @@
 
-<div class="card-deck">
+<div class="card-deck ms-3">
 
-  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header bg-transparent border-grey"> <%= project.title %> </div>
+  <div class="card text-white bg-secondary mb-3 h-500" style="width: 18rem;"  >
+    <div class="card-header bg-transparent border-grey" style="width: 18rem;"> <%= project.title %> </div>
   
     <div class="card-body text-gray">
       <p class="card-text"><%= project.description %></p>
@@ -10,6 +10,7 @@
     <div class="card-footer bg-transparent border-grey"> <%= link_to "Show this project", project, :class => "btn btn-secondary" if user_signed_in?%> </div>
   </div>
 </div>
+
 
 
 
