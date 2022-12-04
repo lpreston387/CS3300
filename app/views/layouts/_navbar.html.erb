@@ -10,8 +10,16 @@
           <%= link_to "Home", root_path, :class => "btn btn-outline-info me-1" %>
         </li>
         <li class="nav-item">
-          <%= link_to "About Me", root_path, :class => "btn btn-outline-info" %>
+          <a href="#opening" class="btn btn-outline-info me-1" role="button">About me</a>
+    
+    
         </li>
+
+        <li class="nav-item">
+        <%= link_to "New project", new_project_path, :class => "btn btn-outline-info" if user_signed_in?%>
+        </li>
+
+     
  
       </ul>
 
