@@ -1,5 +1,5 @@
 
-  <div class="px-4 pt-5 my-5 text-center border-bottom">
+  <div class="px-4 pt-5 my-5 text-center border-bottom border top">
   <h1 class="display-4 fw-bold">Welcome</h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">Hello! Welcome to my portfolio (work in progress). Below are a list of my accomplished software projects</p>
@@ -10,9 +10,10 @@
   </div>
 </div>
 
-
-
-    <div class="card-group">
+<div class="container-md" >
+<div class="text-center mb-5 ">
+<h1 class="display-4 fw-bold mb-5">Projects</h1>
+    <div class="card-group ">
     <% @projects.each do |project| %>
         <%= render project %>
     
@@ -20,9 +21,11 @@
     </div>
 
   </div>  
-
-  <div class="px-4 pt-5 my-5 text-center border-bottom">
+</div>
+</div>
+  <div class="text-center border-bottom border-top">
   <h1 class="display-4 fw-bold">About Me</h1>
+  <p id="opening"></p>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">Hello! Welcome to my portfolio (work in progress). Below are a list of my accomplished software projects</p>
   </div>
@@ -31,7 +34,14 @@
     </div>
   </div>
 </div>
-  <p id="opening">Here is an introductory paragraph with the selector 'opening' attached to it.</p>
+
+<p class="lead mb-4">Contanct Me At</p>
+
+
+
+
+
+
 
 
 
