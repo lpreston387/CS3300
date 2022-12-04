@@ -1,13 +1,13 @@
 
-<div class="card-deck ms-3">
+<div class="card-deck -2 ms-3">
 
-  <div class="card teal lighten-2 mb-3 h-500" style="width: 18rem;"  >
-    <div class="card-header bg-transparent border-grey" style="width: 18rem;"> <%= project.title %> </div>
+  <div class="card bg-dark mb-3 text-info  h-500" style="width: 18rem;"  >
+    <div class="card-header text info border-info" style="width: 8rem;"> <%= project.title %> </div>
   
-    <div class="card-body text-gray">
+    <div class="card-body text-info" style="height: 18rem;">
       <p class="card-text"><%= project.description %></p>
     </div>
-    <div class="card-footer bg-transparent border-grey"> <%= link_to "Show this project", project, :class => "btn btn-secondary" if user_signed_in?%> </div>
+    <div class="card-footer bg-transparent border-info" style="width: 8rem;"> <%= link_to "Show this project", project, :class => "btn btn-outline-info btn-sm" if user_signed_in?%> </div>
   </div>
 </div>
 
