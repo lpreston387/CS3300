@@ -1,40 +1,82 @@
 
 
-<div class="container-md cyan lighten-3" >
+
+
+<div class="text-center border-bottom border-top cyan darken-1 ">
+  <h1 class="display-4 fw-bold mt-5">Edit project page</h1>
+      <div class="col-lg-6 mx-auto mb-5">
+      </div>
+
+      <div class="overflow-hidden" style="max-height: 30vh;">
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="container-md " >
   <div class="text-center mb-5 ">
-    <h1 class="display-4 fw-bold mb-5">Editing Current Project</h1>
-    <p class="lead mb-4"> <%= @project.title %> </p>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-5">
-        <div class="container-fluid">
-          <%= link_to "Project Tool Bar", root_path, class: 'navbar-brand' %>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <%= link_to "New project", new_project_path, :class => "btn btn-outline-info" if user_signed_in?%>
-                </li>
 
-                <li class="nav-item">
-                  <%= link_to "Show this project", @project, :class => "btn btn-outline-info ms-1" if user_signed_in?%> 
-                </li>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-5">
+  <div class="container-fluid">
+    <%= link_to "Project Tool Bar", root_path, class: 'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to "New project", new_project_path, :class => "btn btn-outline-info" if user_signed_in?%>
+          </li>
 
-                <li class="nav-item">
-                  <%= link_to "Back to projects", projects_path, :class => "btn btn-outline-info ms-1" if user_signed_in?%> 
-                </li>
+          <li class="nav-item">
+            <%= link_to "Show this project", @project, :class => "btn btn-outline-info ms-1" if user_signed_in?%> 
+          </li>
 
+          <li class="nav-item">
+            <%= link_to "Back to projects", projects_path, :class => "btn btn-outline-info ms-1" if user_signed_in?%> 
+          </li>
 
 
 
-            </div>
-          </div>
-      </nav>
+
+      </div>
+    </div>
+</nav>
+
+
+      
+
+ 
+
+  </div>
+</div>
 
 
 
-<%= render "form", project: @project %>
+<div class="col d-flex justify-content-center">
 
-<br>
+
+  <%= render "form", project: @project %>
+
+  <br>
+</div>
+
+<div class="text-center border-bottom border-top cyan darken-1 mt-5 ">
+  <h1 class="display-4 fw-bold"></h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="display-4 mb-4"> <%= @project.title %> </p>
+
+
+
+      </div>
+      <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+      </div>
+  </div>
+</div>
 
 
