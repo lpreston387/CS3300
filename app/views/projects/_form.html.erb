@@ -12,29 +12,30 @@
   <% end %>
 
 
-<div class="card w-50 blue-grey darken-4 mb-2">
-  <div class="card-body">
-    <div class="form-group ">
-      <p><label style="color: cyan" for="title">Title</label><p>
-      <input type="title" class="form-control" id="title" aria-describedby="emailHelp" <%= form.text_field :title%>
-    </div>
-  </div>
-</div>
-
-<div class="card w-75 blue-grey darken-4">
-  <div class="card-body">
-    <div class="form-group">
-      <p><label style="color: cyan" for="description">Description</label><p>
-      <textarea class="form-control" id="description" rows="5" cols="100" <%= form.text_area :description %>  </textarea>  
+  <div class="card w-50 blue-grey darken-4 mb-2">
+    <div class="card-body">
+      <div class="form-group ">
+        <p><label style="color: cyan" for="title">Title</label><p>
+        <input type="title" class="form-control" id="title" aria-describedby="title" <%= form.text_field :title%>
+      </div>
     </div>
   </div>
 
-  <div>
-    <button type="button" class="btn btn-outline-info"><%= form.submit %></button>
-  </div>
+  <div class="card w-75 blue-grey darken-4">
+    <div class="card-body">
+      <div class="form-group">
+        <p><label style="color: cyan" for="description">Description</label><p>
+        <textarea class="form-control" id="description" rows="5" cols="100" <%= form.text_area :description%>  </textarea>  
+      </div>
+    </div>
 
-</div>
+    <div>
+      <button type="submit" class="btn btn-outline-info">Save</button>
  
+    </div>
+
+  </div>
+
 
 
 
