@@ -1,10 +1,74 @@
-<h1>New project</h1>
 
-<%= render "form", project: @project %>
 
-<br>
 
-<div>
+<div class="text-center border-bottom border-top cyan darken-1">
+  <h1 class="display-4 fw-bold">Showing Project</h1>
+    <p id="opening"></p>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4"> <%= @project.title %> </p>
+      </div>
 
-  <%= link_to "Back to projects", projects_path %>
+      <div class="overflow-hidden" style="max-height: 30vh;">
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="container-md " >
+  <div class="text-center mb-5 ">
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-5">
+        <div class="container-fluid">
+          <%= link_to "Project Tool Bar", root_path, class: 'navbar-brand' %>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                  <%= link_to "Back to projects", projects_path, :class => "btn btn-outline-info ms-1" if user_signed_in? %>
+                </li>
+
+
+
+
+
+            </div>
+          </div>
+
+      </nav>
+      
+
+ 
+
+  </div>
+</div>
+
+
+
+<div class="col d-flex justify-content-center">
+
+
+  <%= render "form", project: @project %>
+
+  <br>
+</div>
+
+<div class="text-center border-bottom border-top cyan darken-1 mt-5 ">
+  <h1 class="display-4 fw-bold"></h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="display-4 mb-4"> Creating new Project </p>
+
+
+
+      </div>
+      <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+      </div>
+  </div>
 </div>
