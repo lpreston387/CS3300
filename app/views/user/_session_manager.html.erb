@@ -15,7 +15,7 @@
   </li>
 <%else%>
   <li class="nav-item">
-    <%= link_to "Sign Up", edit_user_registration_path, class:"nav-link btn btn-outline-info me-1" %>
+    <%= link_to "Sign up", new_registration_path(resource_name), class:"nav-link btn btn-outline-info me-1" %>
   </li>
   <li class="nav-item">
     <%= link_to "Login", new_user_session_path, class:"nav-link btn btn-outline-info me-1"%>
