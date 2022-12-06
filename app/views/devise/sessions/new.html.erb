@@ -1,0 +1,60 @@
+<div class="px-4 pt-5  text-center border-bottom border top cyan darken-1">
+  <h1 class="display-4 fw-bold">Welcome</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Hello! Please log in to create, edit, and delete, projects</p>
+  </div>
+  <div class="overflow-hidden" style="max-height: 30vh;">
+    <div class="container px-5">
+    </div>
+  </div>
+</div>
+
+<section class="vh-100">
+  <div class="container-sm grey ">
+    <div class="row d-flex justify-content-center align-items-center ">
+      <div class="col-md-9 col-xl-1 col-l-5 offset-l-1">
+
+      </div>
+      <div class="col-md-8 col-lg-6 col-m-4 ">
+
+
+
+          <div class="card mt-5 mb-5 grey darken-4">
+            <div class="card-header">
+              <p style="color:cyan;">Log In.</p>
+            </div>
+            <div class="card-body">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="email" style="color:cyan;">Email address</label>
+                  <input type="email" id="email" class="form-control form-control-lg"
+                    placeholder="Enter a valid email address" />
+                </div>
+      
+                <div class="form-outline mb-3">
+                  <label class="form-label" for="password" style="color:cyan">Password</label>
+                  <input type="password" id="password" class="form-control form-control-lg"
+                    placeholder="Enter password" />
+                  
+                </div>
+      
+                <div class="actions">
+                  <%= f.submit "Log in" %>
+                </div>
+
+                <%= render "devise/shared/links" %>
+
+
+            </div>
+          </div>
+
+
+
+
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div
+
