@@ -1,60 +1,57 @@
 <div class="px-4 pt-5  text-center border-bottom border top cyan darken-1">
-  <h1 class="display-4 fw-bold">Welcome</h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Hello! Please log in to create, edit, and delete, projects</p>
-  </div>
-  <div class="overflow-hidden" style="max-height: 30vh;">
-    <div class="container px-5">
-    </div>
+<h1 class="display-4 fw-bold">Welcome</h1>
+<div class="col-lg-6 mx-auto">
+  <p class="lead mb-4">Hello! Please log in to create, edit, and delete, projects</p>
+</div>
+<div class="overflow-hidden" style="max-height: 30vh;">
+  <div class="container px-5">
   </div>
 </div>
+</div>
 
-<section class="vh-100">
-  <div class="container-sm grey ">
+<section class="col d-flex justify-content-center">
+  <div class="container-fluid grey ">
     <div class="row d-flex justify-content-center align-items-center ">
-      <div class="col-md-9 col-xl-1 col-l-5 offset-l-1">
+      <div class="card mt-5 mb-5 grey darken-4">
+        <div class="card-header mx-auto " >
 
-      </div>
-      <div class="col-md-8 col-lg-6 col-m-4 ">
+          <h1 style="color:cyan;" class="display-4 fw-bold">Log in Here!</h1>
+        </div>
+        
+          <div class="card-body grey darken-3 mx-auto my-5">
 
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
+            
+              <%= f.label :email, "Email Address", class: "sr-only btn btn-outline-info" %>
+              <%= f.email_field :email, autofocus: true, class: "form-control-lg brown", placeholder: "Enter Email Address" %>
+          
+              <div class="actions">
+                <%= f.label :password, "Password", class: "sr-only btn btn-outline-info" %>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control-lg brown", placeholder: "Enter Password"  %>
+              </div>
 
+          
+              <%= f.button "Sign in", class: "btn btn-lg btn-outline-info btn-block mt-4" %>
 
-          <div class="card mt-5 mb-5 grey darken-4">
-            <div class="card-header">
-              <p style="color:cyan;">Log In.</p>
-            </div>
-            <div class="card-body">
-              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-lg btn-outline-info btn-block mt-4" %><br />
 
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="email" style="color:cyan;">Email address</label>
-                  <input type="email" id="email" class="form-control form-control-lg"
-                    placeholder="Enter a valid email address" />
-                </div>
-      
-                <div class="form-outline mb-3">
-                  <label class="form-label" for="password" style="color:cyan">Password</label>
-                  <input type="password" id="password" class="form-control form-control-lg"
-                    placeholder="Enter password" />
-                  
-                </div>
-      
-                <div class="actions">
-                  <%= f.submit "Log in" %>
-                </div>
-
-                <%= render "devise/shared/links" %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-lg btn-outline-info btn-block mt-4 my-4" %><br />
 
 
-            </div>
+
+              <% if devise_mapping.rememberable? -%>
+              <label>
+                <%= f.check_box :remember_me, label: false %>
+                <button type="button" class="btn btn-outline-info " disabled>Remember Me</button>
+              </label>
+            <% end -%>
+            <% end %>
+
           </div>
-
-
-
-
-          <% end %>
+        
       </div>
-    </div>
-  </div>
-  <div
 
+
+    </div> 
+  </div>
+</section>
