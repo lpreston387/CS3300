@@ -75,6 +75,7 @@ end
 # Run against this stable release
 group :development, :test do
   gem 'rspec-rails', '~> 6.0.0'
+  gem "factory_bot", "~> 6.2"
 end
 
 group :test do
@@ -96,3 +97,4 @@ gem "devise"
 gem 'bootstrap', '~> 5.2.2'
 
 gem 'jquery-rails'
+
